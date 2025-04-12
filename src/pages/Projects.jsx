@@ -17,7 +17,7 @@ function Projects() {
         "Vite"
       ],
       image: sms,
-      github: "https://github.com/Priyanshunagda/Student-Result-Management-System",
+      github: "https://github.com/Priyanshunagda/School-Result-Management-System",
       live: "https://student-result-management-system-gamma.vercel.app"
     }
   ];
