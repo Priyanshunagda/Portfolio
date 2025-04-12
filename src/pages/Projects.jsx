@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import sms from '../assets/sms.png';
+import srms from '../assets/srms.png';
 
 function Projects() {
   const projects = [
     {
-      title: "Student Management System",
+      title: "Student Result Management System",
       description:
         "A Student Management System is a software used by schools and colleges to keep track of student details like admission, attendance, marks, and exams. It helps teachers and staff manage everything in one place, making work faster and easier.",
       skills: [
@@ -16,7 +16,7 @@ function Projects() {
         "PHP",
         "Vite"
       ],
-      image: sms,
+      image: srms,
       github: "https://github.com/Priyanshunagda/Student-Result-Management-System",
       live: "https://student-result-management-system-gamma.vercel.app"
     }

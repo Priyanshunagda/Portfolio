@@ -30,7 +30,7 @@ function About() {
             year: "Oct, 2023 - Oct, 2025",
         },
         {
-            title: "Bachelor of Commerce (B.Com.)",
+            title: "Bachelor of Computer Applications (BCA)",
             description: "Mohanlal Sukhadia University, Udaipur",
             year: "April, 2020 - April, 2023",
         },
