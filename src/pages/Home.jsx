@@ -22,7 +22,7 @@ function Home() {
           animate={{ scale: 1 }}
           transition={{ delay: 0.5, type: "spring" }}
         >
-          <span className="text-accent-teal font-medium tracking-wide text-sm">QA & Automation Engineer</span>
+          <span className="text-accent-teal font-medium tracking-wide text-sm">Automation Engineer</span>
         </motion.div>
 
         <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
