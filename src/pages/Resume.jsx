@@ -10,20 +10,20 @@ function Resume() {
       className="max-w-6xl mx-auto relative p-6"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 to-transparent pointer-events-none rounded-2xl" />
-      
-      <div className="flex justify-between items-center mb-2 px-6 relative">
-        <h1 className="section-heading pt-4">Resume</h1>
+
+      <div className="flex justify-between items-center mb-8 px-6 relative z-10">
+        <h1 className="section-title mb-0">Resume</h1>
         <motion.a
           href="/Priyanshu-Resume.pdf"
           download
-          className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors"
-          whileHover={{ scale: 1.10 }}
+          className="btn-primary flex items-center gap-2"
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
           <FaDownload /> Download
         </motion.a>
       </div>
-      
+
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

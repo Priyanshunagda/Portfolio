@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0b3a3a"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="32" fill="url(#bg)"/>
+  <circle cx="980" cy="160" r="90" fill="#0ea5e9" opacity="0.12"/>
+  <circle cx="210" cy="620" r="120" fill="#14b8a6" opacity="0.12"/>
+  <rect x="140" y="160" width="920" height="480" rx="24" fill="#0f2430" stroke="#0f766e" stroke-width="2" opacity="0.9"/>
+  <rect x="220" y="240" width="260" height="220" rx="18" fill="url(#chip)"/>
+  <rect x="520" y="240" width="440" height="36" rx="8" fill="#0ea5e9" opacity="0.7"/>
+  <rect x="520" y="300" width="360" height="28" rx="8" fill="#1f2937" opacity="0.8"/>
+  <rect x="520" y="350" width="320" height="28" rx="8" fill="#1f2937" opacity="0.8"/>
+  <rect x="520" y="400" width="380" height="28" rx="8" fill="#1f2937" opacity="0.8"/>
+  <text x="240" y="370" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" fill="#041316">CYPRESS</text>
+  <text x="200" y="570" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" fill="#5eead4">E2E AUTOMATION</text>
+</svg>
