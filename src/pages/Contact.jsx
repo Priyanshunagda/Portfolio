@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPaperPlane, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaPaperPlane, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -17,77 +17,108 @@ function Contact() {
   };
 
   return (
-    <section className="section-container">
+    <section className="section-container pt-12">
       <div className="max-w-5xl mx-auto">
+        
+        {/* Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          <h1 className="section-title mb-4">Let's Build Something Amazing</h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            I'm currently available for freelance work or full-time opportunities.
-            Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          <h1 className="section-title">Let&apos;s Connect</h1>
+          <p className="section-subtitle">
+            I am currently open to freelance consultancies, full-time contract engagements, and team collaborations. 
+            Drop me a message, and let&apos;s build something robust together.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-5 gap-8 lg:gap-12">
-          {/* Contact Info Card */}
+          
+          {/* Info Side */}
           <motion.div
-            className="md:col-span-2 glass-panel p-8 rounded-2xl flex flex-col justify-between relative overflow-hidden group"
+            className="md:col-span-2 glass-panel p-8 rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:border-white/10"
             initial={{ x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-accent-teal/10 rounded-full blur-3xl -z-10 transition-transform group-hover:scale-150 duration-700" />
-
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-8">Contact Info</h3>
-              <div className="space-y-8">
-                <div className="flex items-start gap-5">
-                  <div className="p-3 bg-accent-teal/10 rounded-xl text-accent-teal shrink-0">
-                    <FaEnvelope size={22} />
+            <div className="absolute top-0 right-0 w-36 h-36 bg-accent-teal/5 rounded-full blur-3xl pointer-events-none -z-10 transition-transform group-hover:scale-150 duration-700" />
+            
+            <div className="space-y-10">
+              <h3 className="text-2xl font-display font-extrabold text-white">Contact Information</h3>
+              
+              <div className="space-y-6">
+                
+                {/* Email Item */}
+                <div className="flex gap-4 items-start">
+                  <div className="p-3 bg-white/5 border border-white/5 rounded-xl text-accent-teal shrink-0">
+                    <FaEnvelope size={18} />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-slate-400 mb-1">Email</p>
-                    <a href="mailto:pnagda5683@gmail.com" className="text-white hover:text-accent-teal transition-colors font-medium break-all text-lg">
+                    <p className="text-slate-500 text-xs font-mono uppercase tracking-wider">Email Address</p>
+                    <a 
+                      href="mailto:pnagda5683@gmail.com" 
+                      className="text-white hover:text-accent-teal text-base font-semibold transition-colors duration-300 break-all"
+                    >
                       pnagda5683@gmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-5">
-                  <div className="p-3 bg-accent-purple/10 rounded-xl text-accent-purple shrink-0">
-                    <FaMapMarkerAlt size={22} />
+                {/* Location Item */}
+                <div className="flex gap-4 items-start">
+                  <div className="p-3 bg-white/5 border border-white/5 rounded-xl text-accent-purple shrink-0">
+                    <FaMapMarkerAlt size={18} />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-slate-400 mb-1">Location</p>
-                    <p className="text-white text-lg">Udaipur, Rajasthan, India</p>
+                    <p className="text-slate-500 text-xs font-mono uppercase tracking-wider">Location</p>
+                    <p className="text-white text-base font-semibold">Udaipur, Rajasthan, India</p>
                   </div>
                 </div>
+
               </div>
             </div>
 
-            <div className="mt-12">
-              <p className="text-sm font-medium text-slate-400 mb-4">Connect with me</p>
-              <div className="flex gap-4">
-                {/* Social Placeholders - Update these links! */}
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 hover:bg-accent-teal hover:text-primary-dark text-white rounded-lg transition-all duration-300 hover:-translate-y-1">
-                  <FaLinkedin size={20} />
+            {/* Social Circle Row */}
+            <div className="mt-12 pt-8 border-t border-white/5">
+              <p className="text-slate-500 text-xs font-mono uppercase tracking-wider mb-4">Connect with me</p>
+              <div className="flex gap-3">
+                <a 
+                  href="https://www.linkedin.com/in/priyanshu-nagda" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-3 bg-white/5 border border-white/5 hover:bg-blue-600 hover:text-white hover:-translate-y-1 text-slate-300 rounded-full transition-all duration-300"
+                  aria-label="LinkedIn Profile"
+                >
+                  <FaLinkedin size={16} />
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 hover:bg-accent-teal hover:text-primary-dark text-white rounded-lg transition-all duration-300 hover:-translate-y-1">
-                  <FaGithub size={20} />
+                <a 
+                  href="https://github.com/Priyanshunagda" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-3 bg-white/5 border border-white/5 hover:bg-slate-800 hover:text-white hover:-translate-y-1 text-slate-300 rounded-full transition-all duration-300"
+                  aria-label="GitHub Profile"
+                >
+                  <FaGithub size={16} />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 hover:bg-accent-teal hover:text-primary-dark text-white rounded-lg transition-all duration-300 hover:-translate-y-1">
-                  <FaTwitter size={20} />
+                <a 
+                  href="https://www.instagram.com/nagda.priyansh_" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-3 bg-white/5 border border-white/5 hover:bg-pink-600 hover:text-white hover:-translate-y-1 text-slate-300 rounded-full transition-all duration-300"
+                  aria-label="Instagram Profile"
+                >
+                  <FaInstagram size={16} />
                 </a>
               </div>
             </div>
+
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Form Side */}
           <motion.div
-            className="md:col-span-3 glass-panel p-8 rounded-2xl"
+            className="md:col-span-3 glass-panel p-8 rounded-2xl relative border border-white/5"
             initial={{ x: 30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -98,8 +129,15 @@ function Contact() {
               className="space-y-6"
             >
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-slate-300">Name</label>
+                
+                {/* Name field */}
+                <div className="flex flex-col gap-2">
+                  <label 
+                    htmlFor="name" 
+                    className="text-xs font-mono uppercase tracking-wider text-slate-500"
+                  >
+                    Your Name
+                  </label>
                   <input
                     type="text"
                     id="name"
@@ -107,12 +145,19 @@ function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-primary-light/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-teal focus:ring-1 focus:ring-accent-teal transition-all"
-                    placeholder="John Doe"
+                    placeholder="e.g. John Doe"
+                    className="w-full bg-[#0d1222]/80 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:bg-[#11172a] focus:border-accent-teal focus:ring-2 focus:ring-accent-teal/10 transition-all text-sm font-light"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-slate-300">Email</label>
+
+                {/* Email field */}
+                <div className="flex flex-col gap-2">
+                  <label 
+                    htmlFor="email" 
+                    className="text-xs font-mono uppercase tracking-wider text-slate-500"
+                  >
+                    Email Address
+                  </label>
                   <input
                     type="email"
                     id="email"
@@ -120,14 +165,21 @@ function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-primary-light/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-teal focus:ring-1 focus:ring-accent-teal transition-all"
-                    placeholder="john@example.com"
+                    placeholder="e.g. name@company.com"
+                    className="w-full bg-[#0d1222]/80 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:bg-[#11172a] focus:border-accent-teal focus:ring-2 focus:ring-accent-teal/10 transition-all text-sm font-light"
                   />
                 </div>
+
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-slate-300">Message</label>
+              {/* Message field */}
+              <div className="flex flex-col gap-2">
+                <label 
+                  htmlFor="message" 
+                  className="text-xs font-mono uppercase tracking-wider text-slate-500"
+                >
+                  Your Message
+                </label>
                 <textarea
                   id="message"
                   name="message"
@@ -135,16 +187,16 @@ function Contact() {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full bg-primary-light/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-teal focus:ring-1 focus:ring-accent-teal transition-all resize-none"
-                  placeholder="Your message here..."
+                  placeholder="Tell me about your project, roles or consultancy needs..."
+                  className="w-full bg-[#0d1222]/80 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:bg-[#11172a] focus:border-accent-teal focus:ring-2 focus:ring-accent-teal/10 transition-all resize-none text-sm font-light"
                 />
               </div>
 
               <button
                 type="submit"
-                className="btn-primary w-full flex items-center justify-center gap-2"
+                className="btn-primary w-full shadow-lg shadow-accent-teal/5 flex items-center justify-center gap-2"
               >
-                <FaPaperPlane /> Send Message
+                <FaPaperPlane size={13} /> Send Secure Message
               </button>
             </form>
           </motion.div>

@@ -1,27 +1,35 @@
-import { useEffect } from 'react';
+/* eslint-disable react/prop-types */
 import Navbar from './Navbar';
 import Footer from './Footer';
 
 const Layout = ({ children }) => {
-    // Add a subtle background particle effect or gradient movement here if desired in the future
     return (
-        <div className="min-h-screen text-slate-200 relative overflow-x-hidden">
-            {/* Background Gradient Orbs */}
-            {/* Dynamic Background */}
-            <div className="fixed inset-0 w-full h-full overflow-hidden -z-10 bg-slate-950">
-                {/* Gradient Blobs */}
-                <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-72 h-72 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="min-h-screen text-slate-200 relative overflow-x-hidden bg-primary-dark">
+            {/* Ambient Background Structure */}
+            <div className="fixed inset-0 w-full h-full overflow-hidden -z-10 bg-[#090d16]">
+                {/* Modern Mesh Gradients */}
+                <div 
+                    className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-accent-teal/8 rounded-full filter blur-[120px] animate-blob"
+                />
+                <div 
+                    className="absolute top-[20%] right-[-10%] w-[60%] h-[60%] bg-accent-purple/8 rounded-full filter blur-[150px] animate-blob"
+                    style={{ animationDelay: '3s' }}
+                />
+                <div 
+                    className="absolute bottom-[-10%] left-[10%] w-[55%] h-[55%] bg-accent-cyan/8 rounded-full filter blur-[130px] animate-blob"
+                    style={{ animationDelay: '6s' }}
+                />
 
-                {/* Overlay Grid/Noise (optional, kept simple for now) */}
-                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02]"></div>
+                {/* Cyberpunk Grid Overlay */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.012)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.012)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
             </div>
 
             <Navbar />
-            <main className="container mx-auto px-4 pt-24 pb-8 md:pt-28 md:pb-12 relative z-10 selection:bg-accent-teal/30">
+            
+            <main className="relative z-10 pt-20 md:pt-24 selection:bg-accent-teal/30 selection:text-accent-teal">
                 {children}
             </main>
+            
             <Footer />
         </div>
     );
