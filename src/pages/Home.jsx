@@ -138,9 +138,9 @@ function Home() {
           <div className="relative p-3 rounded-[2.5rem] bg-gradient-to-tr from-accent-teal via-white/5 to-accent-purple border border-white/10 shadow-2xl max-w-[380px] w-full aspect-square overflow-hidden group">
             {/* The Professional Headshot Image */}
             <img
-              src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&h=600&q=80"
+              src="/profile.jpg"
               alt="Priyanshu Nagda - QA Automation Engineer"
-              className="w-full h-full object-cover rounded-[2rem] filter contrast-[1.02] brightness-95 group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover object-top rounded-[2rem] filter contrast-[1.02] brightness-95 group-hover:scale-105 transition-transform duration-700"
             />
             
             {/* Hover Tech Overlay */}
