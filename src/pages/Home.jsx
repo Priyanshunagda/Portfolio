@@ -144,15 +144,15 @@ function Home() {
             />
             
             {/* Hover Tech Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 rounded-[2rem]">
-              <span className="text-white font-display font-bold text-lg">Priyanshu Nagda</span>
-              <span className="text-accent-teal text-xs font-mono">Udaipur, Rajasthan, India</span>
+            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end items-end p-6 rounded-[2rem] text-right pointer-events-none z-10">
+              <span className="text-white font-display font-bold text-lg drop-shadow-md">Priyanshu Nagda</span>
+              <span className="text-accent-teal text-xs font-mono drop-shadow">Udaipur, Rajasthan, India</span>
             </div>
           </div>
 
           {/* Interactive Floating Metric Badge */}
           <motion.div
-            className="absolute bottom-6 -left-6 glass-panel p-4 rounded-2xl flex items-center gap-3 border border-white/5 shadow-2xl animate-float max-w-[190px]"
+            className="absolute bottom-6 -left-6 glass-panel p-4 rounded-2xl flex items-center gap-3 border border-white/5 shadow-2xl animate-float max-w-[190px] z-20"
             whileHover={{ scale: 1.05 }}
           >
             <div className="w-10 h-10 rounded-xl bg-accent-teal/15 flex items-center justify-center text-accent-teal shrink-0">
