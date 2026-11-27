@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-700 font-sans antialiased selection:bg-blue-100 selection:text-blue-950;
+    @apply bg-canvas text-slate-700 font-sans antialiased selection:bg-blue-100 selection:text-blue-950;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -33,6 +33,41 @@
 
   .panel {
     @apply border border-slate-200 bg-white shadow-panel;
+  }
+
+  .hero-panel {
+    background-image: linear-gradient(125deg, #fff 22%, #f5f9ff 100%);
+  }
+
+  .portrait-backdrop {
+    background-image:
+      radial-gradient(circle, #386aab2e 1px, transparent 1px),
+      linear-gradient(135deg, #e7efff, #eef8f5);
+    background-size: 16px 16px, 100% 100%;
+  }
+
+  .panel-effect:focus-within {
+    @apply border-blue-300 shadow-panel-raised;
+  }
+
+  @media (hover: hover) {
+    .panel-effect:hover {
+      @apply border-blue-200 shadow-panel-raised;
+    }
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .panel-effect {
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .profile-photo {
+      transition: transform 320ms ease;
+    }
+
+    .portrait-backdrop figure:hover .profile-photo {
+      transform: scale(1.03);
+    }
   }
 
   .btn-primary, .btn-outline {

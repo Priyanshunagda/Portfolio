@@ -8,16 +8,18 @@ export default {
         display: ['Outfit', 'sans-serif'],
       },
       colors: {
+        canvas: '#f4f7fb',
         accent: {
           teal: '#0f766e',
           cyan: '#0e7490',
           purple: '#6d28d9',
           pink: '#be185d',
-          indigo: '#234bbc',
+          indigo: '#2552ab',
         },
       },
       boxShadow: {
-        panel: '0 2px 4px rgba(15, 23, 42, 0.04), 0 10px 32px rgba(15, 23, 42, 0.05)',
+        panel: '0 2px 4px rgba(24, 44, 76, 0.04), 0 10px 30px rgba(24, 44, 76, 0.06)',
+        'panel-raised': '0 4px 8px rgba(24, 44, 76, 0.05), 0 15px 34px rgba(24, 44, 76, 0.12)',
       },
     },
   },

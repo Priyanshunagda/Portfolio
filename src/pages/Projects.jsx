@@ -186,7 +186,7 @@ function Projects() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.4 }}
-              className="panel flex h-full flex-col overflow-hidden rounded-2xl"
+              className="panel panel-effect flex h-full flex-col overflow-hidden rounded-2xl"
             >
               {/* Image Showcase */}
               <div className="relative h-52 shrink-0 overflow-hidden border-b border-slate-200 bg-slate-100">
