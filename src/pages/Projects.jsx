@@ -9,6 +9,45 @@ import jiraImg from '../assets/qa-jira.png';
 import cicseImg from '../assets/qa-cicse.png';
 import cicseModuleImg from '../assets/qa-cicse-module.png';
 import ultrabankerLogin from '../assets/ultrabanker-login.png';
+import testPilotDashboard from '../assets/testpilot-dashboard.jpg';
+import testPilotSignIn from '../assets/testpilot-sign-in.jpg';
+
+const testPilotScreenshots = [
+  { label: "Demo dashboard", source: testPilotDashboard, alt: "TestPilot AI dashboard with sample QA data" },
+  { label: "Sign-in", source: testPilotSignIn, alt: "TestPilot AI sign-in screen" },
+];
+
+function TestPilotScreenshots() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const current = testPilotScreenshots[activeIndex];
+
+  return (
+    <div className="relative z-10 flex h-full flex-col">
+      <a
+        href={current.source}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Open full-size screenshot: ${current.alt}`}
+        className="block min-h-0 flex-1 focus-visible:outline focus-visible:outline-accent-cyan"
+      >
+        <img src={current.source} alt={current.alt} className="h-full w-full object-contain" />
+      </a>
+      <div role="group" aria-label="Project screenshots" className="flex justify-center gap-2 p-2">
+        {testPilotScreenshots.map(({ label }, index) => (
+          <button
+            key={label}
+            type="button"
+            aria-pressed={activeIndex === index}
+            onClick={() => setActiveIndex(index)}
+            className="rounded-md border border-white/10 px-2.5 py-1 text-xs text-slate-300 hover:text-white aria-pressed:border-accent-cyan/50 aria-pressed:text-accent-cyan"
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -22,6 +61,7 @@ function Projects() {
         "An AI-assisted QA platform that discovers features on web applications, generates test cases from those findings, and runs Playwright tests in Chromium. It tracks failures and produces test reports for QA review.",
       skills: ["Playwright", "Gemini", "Next.js", "FastAPI", "PostgreSQL"],
       category: "Automation",
+      ScreenshotGallery: TestPilotScreenshots,
       status: "In development"
     },
     {
@@ -159,8 +199,12 @@ function Projects() {
             >
               {/* Image Showcase */}
               <div className="h-52 overflow-hidden relative bg-[#090e1a]">
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent opacity-60 z-10" />
-                {project.screenshot ? (
+                {!project.ScreenshotGallery && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent opacity-60 z-10" />
+                )}
+                {project.ScreenshotGallery ? (
+                  <project.ScreenshotGallery />
+                ) : project.screenshot ? (
                   <img
                     src={project.screenshot}
                     alt={`${project.title} sign-in screen`}
