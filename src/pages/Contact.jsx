@@ -18,11 +18,11 @@ function Contact() {
 
   return (
     <section className="section-container pt-12">
-      <div className="max-w-5xl mx-auto">
+      <div className="space-y-12">
         
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

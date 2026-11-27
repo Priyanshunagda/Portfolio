@@ -23,8 +23,12 @@
 }
 
 @layer components {
+  .page-shell, .section-container {
+    @apply mx-auto w-full max-w-[1760px] px-5 sm:px-8 xl:px-10 2xl:px-12;
+  }
+
   .section-container {
-    @apply relative mx-auto w-full max-w-6xl px-5 py-12 sm:px-8 md:py-16;
+    @apply relative py-12 md:py-16;
   }
 
   .panel {

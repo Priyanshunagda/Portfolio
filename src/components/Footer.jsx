@@ -12,7 +12,7 @@ function Footer() {
 
   return (
     <footer className="bg-white border-t border-slate-200 py-8 relative z-10">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="page-shell flex flex-col items-center justify-between gap-6 md:flex-row">
         
         {/* Logo */}
         <Link to="/" className="font-display text-lg font-semibold text-slate-950 hover:text-accent-indigo">

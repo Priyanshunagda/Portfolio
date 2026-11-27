@@ -40,7 +40,7 @@ function Resume() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="max-w-5xl mx-auto p-6 pt-12 relative"
+      className="section-container pt-12"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-accent-teal/5 to-transparent pointer-events-none rounded-3xl -z-10" />
 

@@ -15,7 +15,7 @@ function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="relative mx-auto flex min-h-[4.5rem] max-w-6xl flex-wrap items-center justify-between px-5 sm:px-8">
+      <div className="page-shell relative flex min-h-[4.5rem] flex-wrap items-center justify-between">
         <NavLink to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3 font-display text-lg font-semibold text-slate-950">
           <span aria-hidden="true" className="grid size-9 place-items-center rounded-lg bg-blue-50 text-sm font-bold text-accent-indigo">PN</span>
           Priyanshu Nagda

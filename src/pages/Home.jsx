@@ -23,7 +23,7 @@ function Home() {
             <Link to="/contact" className="btn-outline">Contact me</Link>
           </div>
         </div>
-        <figure className="mx-auto w-full max-w-[360px] rounded-2xl border border-blue-100 bg-blue-50 p-3">
+        <figure className="mx-auto w-full max-w-[360px] rounded-2xl border border-blue-100 bg-blue-50 p-3 xl:max-w-[420px]">
           <img src="/profile.jpg" alt="Priyanshu Nagda" className="aspect-square w-full rounded-xl object-cover object-top" fetchPriority="high" />
           <figcaption className="flex items-center gap-2 px-1 pb-1 pt-3 text-sm font-medium text-slate-600">
             <FaMapMarkerAlt aria-hidden="true" className="text-accent-indigo" /> Udaipur, Rajasthan, India
