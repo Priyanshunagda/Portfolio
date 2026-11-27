@@ -1,171 +1,46 @@
-import { motion } from 'framer-motion';
-import { TypeAnimation } from 'react-type-animation';
-import { FaArrowRight, FaBug, FaCode, FaCheckDouble } from 'react-icons/fa';
+import { FaArrowRight, FaCheckDouble, FaCode, FaListAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+
+const specialties = [
+  { title: 'Test automation', detail: 'Cypress and Playwright end-to-end suites', icon: FaCheckDouble },
+  { title: 'Manual QA', detail: 'Functional, regression, and release testing', icon: FaListAlt },
+  { title: 'Web development', detail: 'JavaScript, React, and the MERN stack', icon: FaCode },
+];
 
 function Home() {
   return (
-    <section className="section-container min-h-[90vh] flex items-center justify-center relative overflow-hidden pt-12">
-      {/* Background Decorative Gradient Blobs */}
-      <div className="absolute top-1/4 -left-12 w-[350px] h-[350px] bg-accent-purple/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse-glow" />
-      <div className="absolute bottom-1/4 -right-12 w-[350px] h-[350px] bg-accent-teal/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse-glow" style={{ animationDelay: '2s' }} />
-
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full relative z-10">
-        
-        {/* Left Content Side */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="lg:col-span-7 flex flex-col items-start text-left"
-        >
-          {/* Pulsing Status Tag */}
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 mb-6 border border-accent-teal/20 rounded-full bg-accent-teal/5 backdrop-blur-md"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-teal opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-teal"></span>
-            </span>
-            <span className="text-accent-teal font-display font-semibold tracking-wide text-xs uppercase">
-              Associate Software Engineer & QA Specialist
-            </span>
-          </motion.div>
-
-          {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold mb-6 leading-[1.1] text-white">
-            Engineering <br />
-            <span className="text-gradient-teal-purple">Flawless Digital</span> <br />
-            Experiences.
-          </h1>
-
-          {/* Typing Sub-Heading */}
-          <div className="text-xl sm:text-2xl text-slate-300 mb-6 font-light h-[40px] flex items-center">
-            <span>I automate &nbsp;</span>
-            <TypeAnimation
-              sequence={[
-                'End-to-End Suites',
-                2000,
-                'Robust Regression Runs',
-                2000,
-                'API Security Workflows',
-                2000,
-                'Manual Life-Cycle Triages',
-                2000
-              ]}
-              wrapper="span"
-              speed={50}
-              className="font-bold text-accent-cyan tracking-wide"
-              repeat={Infinity}
-            />
-          </div>
-
-          {/* Core Tagline Description */}
-          <p className="text-slate-400 text-base md:text-lg mb-10 leading-relaxed max-w-xl font-light">
-            I bridge the gap between manual precision and full-scale test automation. 
-            Specializing in Cypress and Playwright suites, I empower engineering teams to deploy zero-defect deployments.
+    <section className="section-container">
+      <div className="panel grid items-center gap-10 rounded-3xl p-6 sm:p-10 lg:grid-cols-[1.35fr_1fr] lg:gap-14 lg:p-14">
+        <div className="max-w-xl">
+          <p className="mb-4 text-sm font-semibold text-accent-indigo">Associate Software Engineer · QA</p>
+          <h1 className="mb-4 text-5xl leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">Priyanshu Nagda</h1>
+          <p className="mb-4 font-display text-2xl font-medium text-slate-800 sm:text-3xl">Manual QA and test automation</p>
+          <p className="mb-8 max-w-lg leading-relaxed text-slate-600 md:text-lg">
+            I test web applications at Kadel Labs, combining hands-on functional and regression testing with end-to-end automation in Cypress and Playwright.
           </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10">
-            <Link to="/projects" className="w-full sm:w-auto">
-              <motion.button
-                className="btn-primary w-full group"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Explore Projects
-                <FaArrowRight className="group-hover:translate-x-1.5 transition-transform duration-300" />
-              </motion.button>
-            </Link>
-            <Link to="/contact" className="w-full sm:w-auto">
-              <motion.button
-                className="btn-outline w-full"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Contact Me
-              </motion.button>
-            </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/projects" className="btn-primary">View projects <FaArrowRight aria-hidden="true" size={12} /></Link>
+            <Link to="/contact" className="btn-outline">Contact me</Link>
           </div>
-
-          {/* Mini Stats row */}
-          <div className="flex gap-8 border-t border-white/5 pt-8 w-full">
-            <div className="flex items-center gap-3">
-              <div className="p-3 bg-accent-teal/10 rounded-xl text-accent-teal">
-                <FaCheckDouble size={18} />
-              </div>
-              <div>
-                <h4 className="text-white font-bold text-xl leading-none">Cypress</h4>
-                <p className="text-slate-400 text-xs mt-1">E2E Automation</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="p-3 bg-accent-purple/10 rounded-xl text-accent-purple">
-                <FaBug size={18} />
-              </div>
-              <div>
-                <h4 className="text-white font-bold text-xl leading-none">Playwright</h4>
-                <p className="text-slate-400 text-xs mt-1">Cross-Browser</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="p-3 bg-accent-cyan/10 rounded-xl text-accent-cyan">
-                <FaCode size={18} />
-              </div>
-              <div>
-                <h4 className="text-white font-bold text-xl leading-none">JavaScript</h4>
-                <p className="text-slate-400 text-xs mt-1">Full-Stack Code</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Right Hero Image Side */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="lg:col-span-5 flex justify-center relative mt-8 lg:mt-0"
-        >
-          {/* Decorative Backing Orbs */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-teal/15 via-transparent to-accent-purple/15 rounded-full filter blur-[80px] -z-10 animate-spin-slow w-[80%] h-[80%] m-auto" />
-
-          {/* Photo Frame Container */}
-          <div className="relative p-3 rounded-[2.5rem] bg-gradient-to-tr from-accent-teal via-white/5 to-accent-purple border border-white/10 shadow-2xl max-w-[380px] w-full aspect-square overflow-hidden group">
-            {/* The Professional Headshot Image */}
-            <img
-              src="/profile.jpg"
-              alt="Priyanshu Nagda - QA Automation Engineer"
-              className="w-full h-full object-cover object-top rounded-[2rem] filter contrast-[1.02] brightness-95 group-hover:scale-105 transition-transform duration-700"
-            />
-            
-            {/* Hover Tech Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end items-end p-6 rounded-[2rem] text-right pointer-events-none z-10">
-              <span className="text-white font-display font-bold text-lg drop-shadow-md">Priyanshu Nagda</span>
-              <span className="text-accent-teal text-xs font-mono drop-shadow">Udaipur, Rajasthan, India</span>
-            </div>
-          </div>
-
-          {/* Interactive Floating Metric Badge */}
-          <motion.div
-            className="absolute bottom-6 -left-6 glass-panel p-4 rounded-2xl flex items-center gap-3 border border-white/5 shadow-2xl animate-float max-w-[190px] z-20"
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="w-10 h-10 rounded-xl bg-accent-teal/15 flex items-center justify-center text-accent-teal shrink-0">
-              <FaCheckDouble size={18} />
-            </div>
-            <div>
-              <h5 className="text-white text-xs font-bold font-mono">Kadel Labs</h5>
-              <p className="text-slate-400 text-[10px]">Associate Eng.</p>
-            </div>
-          </motion.div>
-        </motion.div>
-
+        </div>
+        <figure className="mx-auto w-full max-w-[360px] rounded-2xl border border-blue-100 bg-blue-50 p-3">
+          <img src="/profile.jpg" alt="Priyanshu Nagda" className="aspect-square w-full rounded-xl object-cover object-top" fetchPriority="high" />
+          <figcaption className="flex items-center gap-2 px-1 pb-1 pt-3 text-sm font-medium text-slate-600">
+            <FaMapMarkerAlt aria-hidden="true" className="text-accent-indigo" /> Udaipur, Rajasthan, India
+          </figcaption>
+        </figure>
       </div>
+      <ul aria-label="Specialties" className="mt-5 grid gap-3 sm:grid-cols-3">
+        {specialties.map(({ title, detail, icon: Icon }) => (
+          <li key={title} className="panel flex items-start gap-3 rounded-xl p-4 lg:p-5">
+            <span className="rounded-lg bg-blue-50 p-2.5 text-accent-indigo"><Icon aria-hidden="true" size={16} /></span>
+            <div>
+              <h2 className="text-base font-semibold">{title}</h2>
+              <p className="mt-1 text-sm text-slate-600">{detail}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

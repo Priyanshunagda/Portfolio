@@ -38,28 +38,28 @@ function Contact() {
           
           {/* Info Side */}
           <motion.div
-            className="md:col-span-2 glass-panel p-8 rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:border-white/10"
-            initial={{ x: -30, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            className="md:col-span-2 panel p-8 rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:border-slate-200"
+            initial={{ y: 12, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
             <div className="absolute top-0 right-0 w-36 h-36 bg-accent-teal/5 rounded-full blur-3xl pointer-events-none -z-10 transition-transform group-hover:scale-150 duration-700" />
             
             <div className="space-y-10">
-              <h3 className="text-2xl font-display font-extrabold text-white">Contact Information</h3>
+              <h3 className="text-2xl font-display font-extrabold text-slate-950">Contact Information</h3>
               
               <div className="space-y-6">
                 
                 {/* Email Item */}
                 <div className="flex gap-4 items-start">
-                  <div className="p-3 bg-white/5 border border-white/5 rounded-xl text-accent-teal shrink-0">
+                  <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-accent-teal shrink-0">
                     <FaEnvelope size={18} />
                   </div>
                   <div>
                     <p className="text-slate-500 text-xs font-mono uppercase tracking-wider">Email Address</p>
                     <a 
                       href="mailto:pnagda5683@gmail.com" 
-                      className="text-white hover:text-accent-teal text-base font-semibold transition-colors duration-300 break-all"
+                      className="text-slate-950 hover:text-accent-teal text-base font-semibold transition-colors duration-300 break-all"
                     >
                       pnagda5683@gmail.com
                     </a>
@@ -68,12 +68,12 @@ function Contact() {
 
                 {/* Location Item */}
                 <div className="flex gap-4 items-start">
-                  <div className="p-3 bg-white/5 border border-white/5 rounded-xl text-accent-purple shrink-0">
+                  <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-accent-purple shrink-0">
                     <FaMapMarkerAlt size={18} />
                   </div>
                   <div>
                     <p className="text-slate-500 text-xs font-mono uppercase tracking-wider">Location</p>
-                    <p className="text-white text-base font-semibold">Udaipur, Rajasthan, India</p>
+                    <p className="text-slate-950 text-base font-semibold">Udaipur, Rajasthan, India</p>
                   </div>
                 </div>
 
@@ -81,14 +81,14 @@ function Contact() {
             </div>
 
             {/* Social Circle Row */}
-            <div className="mt-12 pt-8 border-t border-white/5">
+            <div className="mt-12 pt-8 border-t border-slate-200">
               <p className="text-slate-500 text-xs font-mono uppercase tracking-wider mb-4">Connect with me</p>
               <div className="flex gap-3">
                 <a 
                   href="https://www.linkedin.com/in/priyanshu-nagda" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="p-3 bg-white/5 border border-white/5 hover:bg-blue-600 hover:text-white hover:-translate-y-1 text-slate-300 rounded-full transition-all duration-300"
+                  className="p-3 bg-slate-50 border border-slate-200 hover:bg-blue-50 hover:text-slate-950 hover:-translate-y-1 text-slate-700 rounded-full transition-all duration-300"
                   aria-label="LinkedIn Profile"
                 >
                   <FaLinkedin size={16} />
@@ -97,7 +97,7 @@ function Contact() {
                   href="https://github.com/Priyanshunagda" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="p-3 bg-white/5 border border-white/5 hover:bg-slate-800 hover:text-white hover:-translate-y-1 text-slate-300 rounded-full transition-all duration-300"
+                  className="p-3 bg-slate-50 border border-slate-200 hover:bg-slate-200 hover:text-slate-950 hover:-translate-y-1 text-slate-700 rounded-full transition-all duration-300"
                   aria-label="GitHub Profile"
                 >
                   <FaGithub size={16} />
@@ -106,7 +106,7 @@ function Contact() {
                   href="https://www.instagram.com/nagda.priyansh_" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="p-3 bg-white/5 border border-white/5 hover:bg-pink-600 hover:text-white hover:-translate-y-1 text-slate-300 rounded-full transition-all duration-300"
+                  className="p-3 bg-slate-50 border border-slate-200 hover:bg-pink-50 hover:text-slate-950 hover:-translate-y-1 text-slate-700 rounded-full transition-all duration-300"
                   aria-label="Instagram Profile"
                 >
                   <FaInstagram size={16} />
@@ -118,9 +118,9 @@ function Contact() {
 
           {/* Form Side */}
           <motion.div
-            className="md:col-span-3 glass-panel p-8 rounded-2xl relative border border-white/5"
-            initial={{ x: 30, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            className="md:col-span-3 panel p-8 rounded-2xl relative border border-slate-200"
+            initial={{ y: 12, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
             <form
@@ -146,7 +146,7 @@ function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="e.g. John Doe"
-                    className="w-full bg-[#0d1222]/80 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:bg-[#11172a] focus:border-accent-teal focus:ring-2 focus:ring-accent-teal/10 transition-all text-sm font-light"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-950 placeholder-slate-500 focus:outline-none focus:bg-white focus:border-accent-teal focus:ring-2 focus:ring-accent-teal/10 transition-all text-sm font-light"
                   />
                 </div>
 
@@ -166,7 +166,7 @@ function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="e.g. name@company.com"
-                    className="w-full bg-[#0d1222]/80 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:bg-[#11172a] focus:border-accent-teal focus:ring-2 focus:ring-accent-teal/10 transition-all text-sm font-light"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-950 placeholder-slate-500 focus:outline-none focus:bg-white focus:border-accent-teal focus:ring-2 focus:ring-accent-teal/10 transition-all text-sm font-light"
                   />
                 </div>
 
@@ -188,7 +188,7 @@ function Contact() {
                   required
                   rows="5"
                   placeholder="Tell me about your project, roles or consultancy needs..."
-                  className="w-full bg-[#0d1222]/80 border border-white/5 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:bg-[#11172a] focus:border-accent-teal focus:ring-2 focus:ring-accent-teal/10 transition-all resize-none text-sm font-light"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-950 placeholder-slate-500 focus:outline-none focus:bg-white focus:border-accent-teal focus:ring-2 focus:ring-accent-teal/10 transition-all resize-none text-sm font-light"
                 />
               </div>
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,101 +6,48 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    color-scheme: light;
   }
 
   body {
-    @apply bg-primary text-slate-300 font-sans selection:bg-accent-teal/30 selection:text-accent-teal antialiased overflow-x-hidden;
+    @apply bg-slate-50 text-slate-700 font-sans antialiased selection:bg-blue-100 selection:text-blue-950;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-display font-bold tracking-tight text-white;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight text-slate-950;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-4 outline-accent-indigo;
   }
 }
 
 @layer components {
   .section-container {
-    @apply max-w-6xl mx-auto px-6 py-16 md:py-24 relative;
+    @apply relative mx-auto w-full max-w-6xl px-5 py-12 sm:px-8 md:py-16;
   }
 
-  .glass-panel {
-    @apply bg-glass-bg backdrop-blur-lg border border-glass-border shadow-glass-card transition-all duration-300;
+  .panel {
+    @apply border border-slate-200 bg-white shadow-panel;
   }
 
-  .glass-nav {
-    @apply bg-primary/60 backdrop-blur-xl border-b border-white/5;
+  .btn-primary, .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border px-5 py-3 text-sm font-semibold transition-colors;
   }
 
   .btn-primary {
-    @apply px-6 py-3 bg-gradient-to-r from-accent-teal to-accent-cyan rounded-full text-primary-dark font-bold tracking-wide transition-all duration-300 hover:shadow-neon-teal hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2;
+    @apply border-accent-indigo bg-accent-indigo text-white hover:border-blue-900 hover:bg-blue-900;
   }
 
   .btn-outline {
-    @apply px-6 py-3 bg-transparent border border-accent-teal/30 rounded-full text-accent-teal font-semibold tracking-wide transition-all duration-300 hover:bg-accent-teal/5 hover:border-accent-teal hover:shadow-[0_0_15px_rgba(45,212,191,0.15)] hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2;
+    @apply border-slate-300 bg-white text-slate-800 hover:border-blue-300 hover:bg-blue-50;
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-400 mb-4 text-center tracking-tight;
+    @apply mb-3 text-center font-display text-4xl font-bold tracking-tight text-slate-950 md:text-5xl;
   }
-  
+
   .section-subtitle {
-    @apply text-base md:text-lg text-slate-400 text-center max-w-2xl mx-auto mb-16 font-light leading-relaxed;
+    @apply mx-auto mb-10 max-w-2xl text-center text-base leading-relaxed text-slate-600;
   }
-
-  .text-gradient-teal-purple {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-accent-teal via-accent-cyan to-accent-purple;
-  }
-
-  .text-gradient-cyan-blue {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan via-accent-indigo to-accent-purple;
-  }
-
-  .nav-link {
-    @apply relative text-slate-300 hover:text-white transition-colors duration-300 py-1;
-  }
-
-  .nav-link::after {
-    content: '';
-    @apply absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent-teal transition-all duration-300 rounded-full;
-  }
-
-  .nav-link:hover::after {
-    @apply w-3/4;
-  }
-  
-  .card-hover-glow {
-    @apply relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-white/10 hover:shadow-glass-card bg-glass-bg;
-  }
-
-  .card-hover-glow::before {
-    content: '';
-    @apply absolute -inset-px bg-gradient-to-r from-accent-teal/0 via-accent-teal/20 to-accent-purple/0 rounded-2xl opacity-0 transition-opacity duration-500 -z-10 pointer-events-none;
-  }
-
-  .card-hover-glow:hover::before {
-    @apply opacity-100;
-  }
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #020617;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 9999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #2dd4bf;
 }

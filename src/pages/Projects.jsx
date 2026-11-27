@@ -7,7 +7,6 @@ import playwrightImg from '../assets/qa-playwright.png';
 import manualImg from '../assets/qa-manual.png';
 import jiraImg from '../assets/qa-jira.png';
 import cicseImg from '../assets/qa-cicse.png';
-import cicseModuleImg from '../assets/qa-cicse-module.png';
 import ultrabankerLogin from '../assets/ultrabanker-login.png';
 import testPilotDashboard from '../assets/testpilot-dashboard.jpg';
 import testPilotSignIn from '../assets/testpilot-sign-in.jpg';
@@ -39,7 +38,7 @@ function TestPilotScreenshots() {
             type="button"
             aria-pressed={activeIndex === index}
             onClick={() => setActiveIndex(index)}
-            className="rounded-md border border-white/10 px-2.5 py-1 text-xs text-slate-300 hover:text-white aria-pressed:border-accent-cyan/50 aria-pressed:text-accent-cyan"
+            className="rounded-md border border-slate-200 bg-white px-2.5 py-1 text-xs font-medium text-slate-700 hover:border-blue-300 aria-pressed:border-blue-200 aria-pressed:bg-blue-50 aria-pressed:text-accent-indigo"
           >
             {label}
           </button>
@@ -75,12 +74,17 @@ function Projects() {
       status: "Company project"
     },
     {
-      title: "CICSE Automation Suite",
-      description:
-        "Complete automated regression coverage for Council for the Indian School Certificate Examinations (CICSE). Architected workflow scripts covering registration validation, secure multi-role portal login states, and student transaction workflows.",
-      skills: ["Cypress", "JavaScript", "Automation", "Regression", "E2E"],
+      title: "CICSE",
+      description: "Manual and automated QA for education portals at Kadel Labs.",
+      details: [
+        { label: "Manual testing", description: "Designed and executed functional, regression, and sanity checks for eOffice and Affiliation, including approval workflows and sandbox payment verification. Reported defects to support release readiness." },
+        { label: "Test automation", description: "Built Cypress regression tests in JavaScript for registration validation, sign-in across user roles, and student transaction workflows." },
+      ],
+      skills: ["Manual Testing", "Cypress", "JavaScript", "Regression Testing"],
       category: "Automation",
-      image: cicseImg
+      additionalCategory: "Manual",
+      image: cicseImg,
+      status: "Company project"
     },
     {
       title: "Student Result Management",
@@ -91,14 +95,6 @@ function Projects() {
       image: srms,
       github: "https://github.com/Priyanshunagda/Student-Result-Management-System",
       live: "https://student-result-management-system-gamma.vercel.app"
-    },
-    {
-      title: "CICSE Manual Compliance",
-      description:
-        "Conducted end-to-end manual lifecycle audits for Eoffice and Affiliation modules. Supervised approval hierarchy testing and verified payment gateway transactions across sandboxed networks.",
-      skills: ["Manual Testing", "Life-Cycle", "Security Audits", "Payment Gateways"],
-      category: "Manual",
-      image: cicseModuleImg
     },
     {
       title: "Cypress Testing Framework",
@@ -141,7 +137,7 @@ function Projects() {
 
   return (
     <section className="section-container pt-12">
-      <div className="text-center mb-12">
+      <header>
         <motion.h1
           className="section-title"
           initial={{ opacity: 0, y: -20 }}
@@ -151,31 +147,26 @@ function Projects() {
           Featured Work
         </motion.h1>
         <p className="section-subtitle">
-          A showcase of automation code frameworks, quality compliance operations, and full-stack software products.
+          Projects in test automation, manual quality assurance, and web development.
         </p>
-      </div>
+      </header>
 
       {/* Category Tabs */}
-      <div className="flex justify-center mb-16">
-        <div className="flex gap-1.5 p-1 bg-white/5 border border-white/5 rounded-full backdrop-blur-md">
+      <div className="mb-8 flex justify-center">
+        <div role="group" aria-label="Filter projects" className="flex flex-wrap justify-center gap-1 rounded-xl border border-slate-200 bg-white p-1">
           {categories.map((cat) => (
             <button
               key={cat}
+              type="button"
+              aria-pressed={activeCategory === cat}
               onClick={() => setActiveCategory(cat)}
-              className={`relative px-6 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300 ${
-                activeCategory === cat 
-                  ? "text-primary-dark font-bold" 
-                  : "text-slate-400 hover:text-white"
+              className={`rounded-lg px-3.5 py-2 text-xs font-semibold transition-colors sm:px-5 sm:text-sm ${
+                activeCategory === cat
+                  ? "bg-accent-indigo text-white"
+                  : "text-slate-600 hover:text-slate-950"
               }`}
             >
-              {activeCategory === cat && (
-                <motion.span 
-                  layoutId="activeCategoryPill"
-                  className="absolute inset-0 bg-gradient-to-r from-accent-teal to-accent-cyan rounded-full"
-                  transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                />
-              )}
-              <span className="relative z-10">{cat}</span>
+              {cat}
             </button>
           ))}
         </div>
@@ -184,7 +175,7 @@ function Projects() {
       {/* Projects Showcase Layout */}
       <motion.div 
         layout
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
       >
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project) => (
@@ -195,13 +186,10 @@ function Projects() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.4 }}
-              className="group glass-panel rounded-2xl overflow-hidden relative border border-white/5 flex flex-col h-full card-hover-glow"
+              className="panel flex h-full flex-col overflow-hidden rounded-2xl"
             >
               {/* Image Showcase */}
-              <div className="h-52 overflow-hidden relative bg-[#090e1a]">
-                {!project.ScreenshotGallery && (
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent opacity-60 z-10" />
-                )}
+              <div className="relative h-52 shrink-0 overflow-hidden border-b border-slate-200 bg-slate-100">
                 {project.ScreenshotGallery ? (
                   <project.ScreenshotGallery />
                 ) : project.screenshot ? (
@@ -214,35 +202,43 @@ function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    className="h-full w-full object-cover"
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-accent-teal/10 to-accent-purple/10 flex items-center justify-center">
                     <FaRegFolderOpen size={30} className="text-slate-600" />
                   </div>
                 )}
-                
-                {/* Category Floating Badge */}
-                <span className="absolute top-4 right-4 z-20 text-[10px] font-mono tracking-wider font-bold uppercase bg-primary-dark/80 backdrop-blur-md px-3 py-1.5 rounded-full text-accent-cyan border border-white/5">
-                  {project.category}
-                </span>
               </div>
 
               {/* Text Body */}
               <div className="p-6 flex flex-col flex-grow relative z-20">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent-teal transition-colors duration-300">
+                <p className="mb-2 text-xs font-semibold text-accent-indigo">
+                  {[project.category, project.additionalCategory].filter(Boolean).join(' / ')}
+                </p>
+                <h2 className="mb-2 text-2xl">
                   {project.title}
-                </h3>
-                <p className="text-slate-400 text-sm mb-6 leading-relaxed font-light flex-grow">
+                </h2>
+                <p className="mb-4 text-sm leading-relaxed text-slate-600">
                   {project.description}
                 </p>
+                {project.details && (
+                  <dl className="mb-4 space-y-3 border-t border-slate-200 pt-4 text-sm">
+                    {project.details.map(({ label, description }) => (
+                      <div key={label}>
+                        <dt className="font-semibold text-slate-950">{label}</dt>
+                        <dd className="mt-1 leading-relaxed text-slate-600">{description}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                )}
 
                 {/* Tech Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-6">
+                <div className="mb-4 mt-auto flex flex-wrap gap-1.5">
                   {project.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="text-[11px] font-medium px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/5"
+                      className="text-[11px] font-medium px-2.5 py-1 rounded-md bg-slate-50 text-slate-700 border border-slate-200"
                     >
                       {skill}
                     </span>
@@ -250,13 +246,13 @@ function Projects() {
                 </div>
 
                 {/* Link Badges */}
-                <div className="flex gap-4 pt-4 border-t border-white/5 mt-auto">
+                <div className="flex gap-4 border-t border-slate-200 pt-4">
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-slate-400 hover:text-white flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase transition-colors"
+                      className="text-slate-600 hover:text-slate-950 flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase transition-colors"
                     >
                       <FaGithub size={14} /> Source
                     </a>
@@ -266,7 +262,7 @@ function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-slate-400 hover:text-accent-teal flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase transition-colors"
+                      className="text-slate-600 hover:text-accent-teal flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase transition-colors"
                     >
                       <FaExternalLinkAlt size={12} /> Live Demo
                     </a>
