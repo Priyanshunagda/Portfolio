@@ -8,6 +8,7 @@ import manualImg from '../assets/qa-manual.png';
 import jiraImg from '../assets/qa-jira.png';
 import cicseImg from '../assets/qa-cicse.png';
 import cicseModuleImg from '../assets/qa-cicse-module.png';
+import ultrabankerLogin from '../assets/ultrabanker-login.png';
 
 function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -15,6 +16,24 @@ function Projects() {
   const categories = ["All", "Automation", "Manual", "Web Dev"];
 
   const projects = [
+    {
+      title: "TestPilot AI",
+      description:
+        "An AI-assisted QA platform that discovers features on web applications, generates test cases from those findings, and runs Playwright tests in Chromium. It tracks failures and produces test reports for QA review.",
+      skills: ["Playwright", "Gemini", "Next.js", "FastAPI", "PostgreSQL"],
+      category: "Automation",
+      status: "In development"
+    },
+    {
+      title: "UltraBanker",
+      description:
+        "I test this loan origination system at Kadel Labs, covering end-to-end functional, regression, and sanity checks and automating key workflows with Cypress and Playwright.",
+      skills: ["Manual Testing", "Regression Testing", "Cypress", "Playwright"],
+      category: "Automation",
+      additionalCategory: "Manual",
+      screenshot: ultrabankerLogin,
+      status: "Company project"
+    },
     {
       title: "CICSE Automation Suite",
       description:
@@ -78,7 +97,7 @@ function Projects() {
   // Filtering Logic
   const filteredProjects = activeCategory === "All" 
     ? projects 
-    : projects.filter(p => p.category === activeCategory);
+    : projects.filter(p => p.category === activeCategory || p.additionalCategory === activeCategory);
 
   return (
     <section className="section-container pt-12">
@@ -141,7 +160,13 @@ function Projects() {
               {/* Image Showcase */}
               <div className="h-52 overflow-hidden relative bg-[#090e1a]">
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent opacity-60 z-10" />
-                {project.image ? (
+                {project.screenshot ? (
+                  <img
+                    src={project.screenshot}
+                    alt={`${project.title} sign-in screen`}
+                    className="w-full h-full object-contain"
+                  />
+                ) : project.image ? (
                   <img
                     src={project.image}
                     alt={project.title}
@@ -204,7 +229,7 @@ function Projects() {
                   )}
                   {!project.github && !project.live && (
                     <span className="text-slate-500 text-xs font-mono italic">
-                      Private/Confidential
+                      {project.status ?? "Private/Confidential"}
                     </span>
                   )}
                 </div>

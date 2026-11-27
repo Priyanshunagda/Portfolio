@@ -1,28 +1,38 @@
 import { motion } from 'framer-motion';
 import { FaDownload, FaFileAlt, FaCheckDouble, FaBriefcase, FaGraduationCap, FaAward } from 'react-icons/fa';
 
+const experience = [
+  {
+    role: "Associate Software Engineer",
+    organization: "Kadel Labs",
+    dates: "Sep 2025 - Present",
+    description: "Design and execute functional, regression, and sanity tests for client projects, including UltraBanker and CICSE. Automate workflows with Cypress and Playwright, track defects through closure, and support release readiness.",
+  },
+  {
+    role: "Full-Stack Developer Intern",
+    organization: "Dexterdigi",
+    dates: "May 2025 - Sep 2025",
+    description: "Built MERN web application features and integrated REST APIs with responsive front-end interfaces.",
+  },
+  {
+    role: "Web Developer Intern",
+    organization: "MLS University",
+    dates: "Jul 2023 - Aug 2023",
+    description: "Developed the Angular front end for Pukar and collaborated on integrating Laravel APIs.",
+  },
+];
+
 function Resume() {
   const highlights = [
     { label: "Current Role", val: "Associate Software Engineer", icon: FaBriefcase, color: "text-accent-teal", bg: "bg-accent-teal/5" },
-    { label: "Core Skills", val: "Cypress, Playwright, API Testing", icon: FaCheckDouble, color: "text-accent-cyan", bg: "bg-accent-cyan/5" },
-    { label: "Education Status", val: "MCA Scholar (MSU Udaipur)", icon: FaGraduationCap, color: "text-accent-purple", bg: "bg-accent-purple/5" },
+    { label: "Core Skills", val: "Manual Testing, Cypress, Playwright", icon: FaCheckDouble, color: "text-accent-cyan", bg: "bg-accent-cyan/5" },
+    { label: "Education", val: "MCA, Mohanlal Sukhadia University", icon: FaGraduationCap, color: "text-accent-purple", bg: "bg-accent-purple/5" },
   ];
 
   const skillBadges = [
-    { name: "Cypress", category: "Automation" },
-    { name: "Playwright", category: "Automation" },
-    { name: "Manual Testing", category: "QA Processes" },
-    { name: "Test Design", category: "QA Processes" },
-    { name: "Bug Reporting", category: "QA Processes" },
-    { name: "JavaScript", category: "Languages" },
-    { name: "React", category: "Languages" },
-    { name: "MySQL", category: "Languages" },
-    { name: "Python", category: "Languages" },
-    { name: "Java", category: "Languages" },
-    { name: "Postman", category: "Tools" },
-    { name: "Jira", category: "Tools" },
-    { name: "GitHub", category: "Tools" },
-    { name: "VS Code", category: "Tools" }
+    "Cypress", "Playwright", "Manual Testing", "Test Case Design", "Bug Tracking",
+    "JavaScript", "Java", "Python", "React", "Node.js", "Express.js", "Angular",
+    "MongoDB", "MySQL", "Tailwind CSS", "Burp Suite",
   ];
 
   return (
@@ -83,15 +93,15 @@ function Resume() {
               <FaAward className="text-accent-teal" /> Core Competencies
             </h3>
             <p className="text-slate-400 text-xs font-light leading-relaxed mb-6 font-sans">
-              Expertise in automating web workflows, validating secure API endpoints, and organizing manual exploratory testing structures.
+              Manual and automation testing for client projects, with a full-stack development background in MERN.
             </p>
             <div className="flex flex-wrap gap-2">
-              {skillBadges.map((badge, idx) => (
+              {skillBadges.map((badge) => (
                 <span 
-                  key={idx}
+                  key={badge}
                   className="text-xs px-3 py-1.5 rounded-lg bg-white/5 text-slate-300 border border-white/5"
                 >
-                  {badge.name}
+                  {badge}
                 </span>
               ))}
             </div>
@@ -106,15 +116,15 @@ function Resume() {
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-purple"></span>
-                Requirement Gathering & Planning
+                Test Case & Scenario Design
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan"></span>
-                CI/CD Automation Integration
+                Functional, Regression & Sanity Testing
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-pink"></span>
-                Defect Tracking & Lifecycle Auditing
+                Defect Tracking & Verification
               </li>
             </ul>
           </div>
@@ -130,21 +140,21 @@ function Resume() {
             </h3>
             
             <div className="relative border-l border-slate-800 pl-4 ml-2 space-y-6">
-              <div className="relative">
-                <span className="absolute -left-[21px] top-1.5 w-3 h-3 rounded-full bg-accent-teal shadow"></span>
-                <div className="flex justify-between items-start gap-4 mb-2">
-                  <div>
-                    <h4 className="text-sm font-bold text-white">Associate Software Engineer</h4>
-                    <p className="text-xs text-slate-400 font-medium">Kadel Labs</p>
+              {experience.map(({ role, organization, dates, description }) => (
+                <div className="relative" key={role}>
+                  <span className="absolute -left-[21px] top-1.5 w-3 h-3 rounded-full bg-accent-teal shadow"></span>
+                  <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                    <div>
+                      <h4 className="text-sm font-bold text-white">{role}</h4>
+                      <p className="text-xs text-slate-400 font-medium">{organization}</p>
+                    </div>
+                    <span className="text-[10px] font-mono bg-white/5 text-slate-400 px-2.5 py-1 rounded-full shrink-0">
+                      {dates}
+                    </span>
                   </div>
-                  <span className="text-[10px] font-mono bg-white/5 text-slate-400 px-2.5 py-1 rounded-full shrink-0">
-                    Sep 2025 - Present
-                  </span>
+                  <p className="text-slate-400 text-xs font-light leading-relaxed">{description}</p>
                 </div>
-                <p className="text-slate-400 text-xs font-light leading-relaxed">
-                  Collaborate on E2E cypress/playwright regressions. Design secure workflow scripts and direct validation suites across team divisions.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -189,6 +199,13 @@ function Resume() {
             </div>
           </div>
 
+          <div className="glass-panel p-6 rounded-2xl border border-white/5">
+            <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+              <FaAward className="text-accent-teal" /> Certification
+            </h3>
+            <p className="text-sm font-bold text-white">Backend Web Development</p>
+            <p className="text-xs text-slate-400 mt-1">TCR Innovation, 2022</p>
+          </div>
         </div>
 
       </div>
